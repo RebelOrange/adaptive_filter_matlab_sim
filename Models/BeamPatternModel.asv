@@ -1,0 +1,33 @@
+function [signalsOut] = BeamPatternModel(signalsIn)
+    signalsOut = signalsIn;
+    names = fieldnames(signalsOut);
+    
+    for name = 1:numel(names)
+        signal = signalsIn.(names{name});
+        
+        %generic beam pattern, need to adjust later
+        if contains(names{name}, "main")
+            bp = abs(fft(ones([10, 1]), length(signal.AzPoints)));
+        elseif contains(names{name}, "aux")
+            bp = abs(fft(ones([2, 1]), length(signal.AzPoints)));
+        else
+
+        end
+
+        % adjust later
+        bp = abs(fft(ones([10, 1]), length(signal.AzPoints)));
+        [az, azInd] = FindNearest(signal.Azimuth, signal.AzPoints);
+        gain = bp(azInd);
+
+        % finish friis equation with gain
+        signal.TimeSeries = gain.* (signal.Lambda.^2 ./ (4.*pi))  .* signal.TimeSeries;
+
+        % end adjust
+
+        signal.Source = "Antenna";
+        signal.Destination = "Reciever";
+        signal.Name = "Beampattern";
+
+        signalsOut.(names{name}) = signal;
+    end
+end

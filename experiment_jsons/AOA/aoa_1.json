@@ -1,0 +1,36 @@
+{
+    "name": "AOA_30deg",
+    "description": "",
+    "SDRConfig":{
+        "ClockFreq": 200e6,
+        "IQRate": 5e6,
+        "BasebandFreq": 0e6
+    },
+    
+    "FileConfig":{
+        "FilenamePrefix": "_input_samples.dat",
+        "DataFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\",
+        "ExperimentFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\SNR\\",
+        "SimResultsFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\SNR\\"
+    },
+
+    "FilterConfig": {
+        "FilterOrder": 10,
+        "LMSlearningRate": 0.3,
+        "NLMSLearningRate": 0.3
+    },
+
+    "SignalConfig":{
+        "CenterFreq": 20e6,
+        "Bandwidth": 1e6,
+        "NoiseBandwidth": 1e6,
+        "PulseWidth": 200e-6,
+
+        "NoiseAmplitude": 10,
+        "SNR" : 10,
+        "SIR" : -10,
+        "SINR": 0,
+        "Leakage": 40,
+        "PhaseAngle" : 0
+    }
+}

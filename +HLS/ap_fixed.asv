@@ -1,0 +1,28 @@
+function [decVal, intVal, error, binStr] = ap_fixed(x, bits, m)
+    n = bits - m;
+    val = x.*(2.^n);
+
+    for i = 1:numel(x)
+        if floor(val(i)) < -(2.^m+n-1)
+            val(i) = -(2.^(m+n-1));
+        elseif floor(val(i)) > (2.^(m+n-1) - 1)
+            val(i) = (2.^(m+n-1)-1);
+        end
+    end
+
+    decVal = floor(val)./(2.^n);
+    intVal = floor(val);
+
+    binStr = nan(numel(x), bits);
+    for i = 1:numel(x)
+        dummyStr = dec2bin(real(intVal(i)), m+n);
+        if numel(dummyStr) ~= (m+n)
+            error("Converting to bin with %d bits failed. Actual bits: %d", m+n, numel(binStr(i,:)))
+        end
+        binStr(i,:) = dummyStr((end-bits+1):end);
+    end
+
+    error = x - decVa
+
+end
+

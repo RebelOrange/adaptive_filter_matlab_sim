@@ -1,0 +1,36 @@
+{
+    "name": "SIR_3dB",
+    "description": "",
+    "SDRConfig":{
+        "ClockFreq": 200e6,
+        "IQRate": 5e6,
+        "BasebandFreq": 0e6
+    },
+    
+    "FileConfig":{
+        "FilenamePrefix": "_samples.dat",
+        "DataFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\SNR\\exp1\\",
+        "ExperimentFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\SNR\\exp1\\",
+        "SimResultsFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\SNR\\exp1\\"
+    },
+
+    "FilterConfig": {
+        "FilterOrder": 3,
+        "LMSlearningRate": 7.65e-6,
+        "NLMSLearningRate": 0.3
+    },
+
+    "SignalConfig":{
+        "CenterFreq": 20e6,
+        "Bandwidth": 1e6,
+        "NoiseBandwidth": 10e6,
+        "PulseWidth": 200e-6,
+
+        "NoiseAmplitude": 10,
+        "SNR" : 10,
+        "SIR" : 3,
+        "SINR": 0,
+        "Leakage": 40,
+        "PhaseAngle" : 0
+    }
+}
