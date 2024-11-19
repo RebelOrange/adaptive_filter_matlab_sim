@@ -9,15 +9,15 @@
     
     "FileConfig":{
         "FilenamePrefix": "_samples.dat",
-        "DataFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\noise_bw\\exp3\\",
-        "ExperimentFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\noise_bw\\exp3\\",
-        "SimResultsFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\noise_bw\\exp3\\"
+        "DataFolder": "experiments\\noise_bw\\exp3\\",
+        "ExperimentFolder": "experiments\\noise_bw\\exp3\\",
+        "SimResultsFolder": "experiments\\noise_bw\\exp3\\"
     },
 
     "FilterConfig": {
-        "FilterOrder": 1,
+        "FilterOrder": 3,
         "LMSlearningRate": 7.65e-6,
-        "NLMSLearningRate": 0.03
+        "NLMSLearningRate": 0.3
     },
 
     "SignalConfig":{

@@ -19,8 +19,10 @@ end
             signalsOut.main_0.Weights = W;
             signalsOut.aux_0.I = real(y);
             signalsOut.aux_0.Q = imag(y);
-            signalsOut.main_0.Name = " LMS Main ";
-            signalsOut.aux_0.Name = " LMS Aux ";
+            signalsOut.main_0.Name = "Matlab LMS";
+            signalsOut.main_0.Antenna = "Output";
+            signalsOut.aux_0.Name = "Matlab Aux";
+            signalsOut.aux_0.Antenna = "Interference Estimate";
         case "NLMS"
             main_in = signalsIn.main_0.I + 1i.*signalsIn.main_0.Q;
             aux_in = signalsIn.aux_0.I + 1i.*signalsIn.aux_0.Q;
@@ -32,8 +34,10 @@ end
             signalsOut.main_0.Weights = W;
             signalsOut.aux_0.I = real(y);
             signalsOut.aux_0.Q = imag(y);
-            signalsOut.main_0.Name = " NLMS Main ";
-            signalsOut.aux_0.Name = " NLMS Aux ";
+            signalsOut.main_0.Name = "Matlab NLMS";
+            signalsOut.main_0.Antenna = "Output";
+            signalsOut.aux_0.Name = "Matlab NLMS";
+            signalsOut.aux_0.Antenna = "Interference Estimate";
         case "LMF"
             main_in = signalsIn.main_0.I + 1i.*signalsIn.main_0.Q;
             aux_in = signalsIn.aux_0.I + 1i.*signalsIn.aux_0.Q;
@@ -77,8 +81,10 @@ end
             signalsOut.main_0.Weights = W;
             signalsOut.aux_0.I = real(y);
             signalsOut.aux_0.Q = imag(y);
-            signalsOut.main_0.Name = " Wiener Main ";
-            signalsOut.aux_0.Name = " Wiener Aux ";
+            signalsOut.main_0.Name = "Wiener";
+            signalsOut.main_0.Antenna = "Output";
+            signalsOut.aux_0.Name = "Wiener";
+            signalsOut.aux_0.Antenna = "Interference Estimate";
         otherwise
 
     end

@@ -9,9 +9,9 @@
     
     "FileConfig":{
         "FilenamePrefix": "_samples.dat",
-        "DataFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\learning_rate\\exp1\\",
-        "ExperimentFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\learning_rate\\exp1\\",
-        "SimResultsFolder": "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\experiments\\learning_rate\\exp1\\"
+        "DataFolder": "experiments\\learning_rate\\exp1\\",
+        "ExperimentFolder": "experiments\\learning_rate\\exp1\\",
+        "SimResultsFolder": "experiments\\learning_rate\\exp1\\"
     },
 
     "FilterConfig": {

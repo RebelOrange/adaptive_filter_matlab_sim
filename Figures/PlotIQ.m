@@ -17,8 +17,10 @@ function [] = PlotIQ(signalIn)
 
 
     fig = figure(Name = signalIn.Source + signalIn.Name + signalIn.Type);
+    fig.Position = [680 385 813 613];
     clf
     subplot(3,1,[2, 1])
+    sgtitle(signalIn.Name +": " + signalIn.Antenna)
     if false
         hold on
             waterfall(f./1e6, t.*tCorrect, mag2db(abs(z)).')
@@ -45,6 +47,7 @@ function [] = PlotIQ(signalIn)
                 grid on; grid minor;
                 xlabel("Frequency (MHz)")
                 ylabel("Magnitude (dB)")
+                xlim([min(f./1e6) max(f./1e6)])
                 
             
     
@@ -56,7 +59,7 @@ function [] = PlotIQ(signalIn)
         x = signalIn.TimeSamplesIQ;
         y = signalIn.Q;
 
-        stem(x, y)
+        stem(x.*tCorrect, y)
         % ylim([-2^14, 2^14]);
 
         xlabel("Time (\musec)")

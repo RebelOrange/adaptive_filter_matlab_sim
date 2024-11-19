@@ -41,7 +41,7 @@ end
         w_i = w(:,i);
         % filter implementation
         % inner product
-        y(i) = w_i'*u; % hermitian inner product
+        y(i) = w_i.'*u; % hermitian inner product
         y(i) = HLS.ap_fixed( y(i) ,wBits, wM, "OverrideToDouble", HLSDoubleFlag); 
 
         % TODO:Direct Form MAC
@@ -55,7 +55,7 @@ end
         % update weight loop
         norm = 1./(eps + u'*u);
         norm =  HLS.ap_fixed( norm , wBits, wM, "OverrideToDouble", HLSDoubleFlag);
-        w(:,i+1) = w_i + 2 .* options.mu .*norm .* conj(e(i)).* u;
+        w(:,i+1) = w_i + 2 .* options.mu .*norm .* (e(i)).* conj(u);
         w(:,i+1) = HLS.ap_fixed( w(:,i+1) , wBits, wM, "OverrideToDouble", HLSDoubleFlag);
     end
 

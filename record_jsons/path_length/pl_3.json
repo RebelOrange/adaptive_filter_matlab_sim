@@ -1,0 +1,40 @@
+{
+    "name": "SIR_3dB",
+    "description": "",
+    "SDRConfig":{
+        "ClockFreq": 200e6,
+        "IQRate": 8e6,
+        "BasebandFreq": 0e6
+    },
+    
+    "FileConfig":{
+        "FilenamePrefix": "_samples_trunc.dat",
+        "DataFolder": "experiments\\records\\path_length\\exp3\\",
+        "ExperimentFolder": "experiments\\records\\path_length\\exp3\\",
+        "SimResultsFolder": "experiments\\records\\path_length\\exp3\\"
+    },
+
+    "FilterConfig": {
+        "FilterOrder": 3,
+        "LMSlearningRate": 7.65e-6,
+        "NLMSLearningRate": 0.3
+    },
+
+    "FigureConfig":{
+        "StartIndex":1
+    },
+
+    "SignalConfig":{
+        "CenterFreq": 30e6,
+        "Bandwidth": 1e6,
+        "NoiseBandwidth": 10e6,
+        "PulseWidth": 200e-6,
+
+        "NoiseAmplitude": 10,
+        "SNR" : 10,
+        "SIR" : 3,
+        "SINR": 0,
+        "Leakage": 40,
+        "PhaseAngle" : 0
+    }
+}

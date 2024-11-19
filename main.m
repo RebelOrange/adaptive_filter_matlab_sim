@@ -14,11 +14,14 @@ addpath("Utils\");
 % fname = "experiment_jsons\SIR\sir_3.json";
 % fname = "experiment_jsons\LearningRate\l_rate_3.json";
 % fname = "experiment_jsons\AOA\aoa_1.json";
-fname = "experiment_jsons\NoiseBandwidth\nbw_3.json";
+datasets_folder = "C:\\Users\\david\\OneDrive\\Documents\\4. rfdev\\data\\";
+% fname = "experiment_jsons\NoiseBandwidth\nbw_3.json";
+fname = "experiment_jsons\SIR\sir_2.json";
 fid = fopen(fname);
 jsonstr = char(fread(fid,inf)');
 fclose(fid);
 exp_config = jsondecode(jsonstr);
+exp_config.FileConfig.ExperimentFolder = datasets_folder+exp_config.FileConfig.ExperimentFolder;
 
 %% input parameters
 DISPLAY_FIGURES         = 1;
